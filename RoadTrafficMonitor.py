@@ -69,6 +69,8 @@ def generateModel():
 
       text.insert(END,"CNN Training Model Accuracy = "+str(accuracy)+"\n")
   else:
+      X_train = np.load('model/X.txt.npy')
+      Y_train = np.load('model/Y.txt.npy')
       classifier = Sequential()
       classifier.add(Convolution2D(32, 3, 3, input_shape = (64, 64, 3), activation = 'relu'))
       classifier.add(MaxPooling2D(pool_size = (2, 2)))
